@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 300px;
+			height: 300px;
+			background: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script src='drag.js'></script>
+</head>
+<body>
+	<div class="box"></div>
+	<script>
+		window.addEventListener('load', function(){
+			let box=document.querySelector('div.box');
+			// box.addEventListener('mousedown', function(e){
+			// 	let oX=e.offsetX,oY=e.offsetY;
+			// 	document.addEventListener('mousemove', fn);
+			// 	// function fn(e){
+			//     // 	this.innerHTML=`
+			// 	   //  相对于浏览器的位置clientX=${e.clientX};</br>
+			//     // 	相对于浏览器的位置clientY=${e.clientY};</br>
+			// 	   //  相对于页面的位置pageX=${e.pageX};</br>
+			//     // 	相对于页面的位置pageY=${e.pageY};</br>
+			//     // 	相对于事件源的位置offsetX=${e.offsetX};</br>
+			//     // 	相对于事件源的位置offsetY=${e.offsetY};`
+			//     // }
+			    
+			// 	function fn(e){
+			// 		let lefts=e.clientX-oX;
+			// 		let tops=e.clientY-oY;
+			// 		box.style.left=`${lefts}px`;
+			// 		box.style.top=`${tops}px`;
+			// 	}
+			// 	box.addEventListener('mouseup',function(){
+			// 		document.removeEventListener('mousemove',fn);
+			// 	})
+			// }) 
+			let Drag=new drag(box);
+			Drag.move();
+		})
+	</script>
+</body>
+</html>
